@@ -1,4 +1,4 @@
-import sys
+import sys,time
 
 try:
     import RPi.GPIO as GPIO
