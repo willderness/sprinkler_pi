@@ -21,7 +21,7 @@ if len(sys.argv) < 2 or int(sys.argv[1]) > len(zone_list):
 GPIO.setmode(GPIO.BOARD)
 
 GPIO.setup(zone_list, GPIO.OUT)
-zone = sys.argv[1] - 1
+zone = int(sys.argv[1]) - 1
 runtime = convert_to_seconds(sys.argv[2])
 
 print("Zone " + zone + " for " + runtime + " seconds.")
