@@ -24,7 +24,7 @@ GPIO.setup(zone_list, GPIO.OUT)
 zone = int(sys.argv[1]) - 1
 runtime = convert_to_seconds(sys.argv[2])
 
-print("Zone " + zone + " for " + runtime + " seconds.")
+print("Zone " + int(zone) + " for " + int(runtime) + " seconds.")
 
 GPIO.output(zone,GPIO.HIGH)
 
