@@ -8,6 +8,8 @@ except RuntimeError:
 
 seconds_per_unit = {"s": 1, "m": 60, "h": 3600, "d": 86400, "w": 604800}
 
+zone_list = [11,12,13]
+
 
 def convert_to_seconds(s):
         return int(s[:-1]) * seconds_per_unit[s[-1]]
@@ -17,8 +19,6 @@ if len(sys.argv) < 2 or int(sys.argv[1]) > len(zone_list):
     quit() 
 
 GPIO.setmode(GPIO.BOARD)
-
-zone_list = [11,12,13]
 
 GPIO.setup(zone_list, GPIO.OUT)
 zone = sys.argv[1] - 1
