@@ -9,6 +9,7 @@ def get_current_weather():
 
 def is_clear_skies(w):
     weather_id = int(w['weather'][0]['id'])
+    print (weather_id)
     if weather_id >= 800 and weather_id < 900:
         return True
     else:
