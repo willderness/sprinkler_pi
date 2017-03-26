@@ -14,7 +14,7 @@ def water_zone(zone, time_in_seconds):
     weather = w.get_current_weather()
     if w.is_clear_skies(weather):
         print("Clear to run sprinklers")
-        descript = "Zone " + str(zone) + " for " + str(runtime) + " seconds."
+        descript = "Zone " + str(zone) + " for " + str(time_in_seconds) + " seconds."
         pushjet.push_msg(service_secret, descript)
         gpio_zone.run_zone(zone, time_in_seconds);
     else:

@@ -9,13 +9,13 @@ import sys
 
 if __name__ == '__main__':
  
-    if len(sys.argv) < 2 or int(sys.argv[1]) > len(zone_list):
+    if len(sys.argv) < 2 or int(sys.argv[1]) > len(gpio_zone.zone_list):
         print("bad args")
         quit()
     
     zone = int(sys.argv[1])
     runtime = gpio_zone.convert_to_seconds(sys.argv[2])
-    tasks.water_zone(zone, runetime)
+    tasks.water_zone(zone, runtime)
 
 
 
