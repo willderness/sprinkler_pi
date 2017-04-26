@@ -17,6 +17,7 @@ def water_zone(zone, time_in_seconds):
         descript = "Zone " + str(zone) + " for " + str(time_in_seconds) + " seconds."
         pushjet.push_msg(service_secret, descript)
         gpio_zone.run_zone(zone, time_in_seconds);
+        pushjet.push_msg(service_secret, "Zone " + str(zone) + " complete.")
     else:
         msg = "Rainy day, not watering garden"
         print(msg)

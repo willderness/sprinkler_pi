@@ -17,7 +17,7 @@ def run_zone(zone_id, time_in_seconds):
     GPIO.setmode(GPIO.BOARD)
 
     GPIO.setup(zone_list, GPIO.OUT)
-    zone = zone_list[int(zone_id)]
+    zone = zone_list[int(zone_id) - 1]
     
     GPIO.output(zone,GPIO.HIGH)
     
@@ -39,5 +39,5 @@ if __name__ == '__main__':
     runtime = convert_to_seconds(sys.argv[2])
     descript = "Zone " + str(zone) + " for " + str(runtime) + " seconds."
     print(descript)
-    run_zone(zone, runetime)
+    run_zone(zone, runtime)
 
