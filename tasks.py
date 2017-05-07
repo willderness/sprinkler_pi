@@ -23,3 +23,10 @@ def water_zone(zone, time_in_seconds):
         print(msg)
         pushjet.push_msg(service_secret, msg)
 
+@app.task
+def water_zone_now(zone, time_in_seconds):
+    descript = "Zone " + str(zone) + " for " + str(time_in_seconds) + " seconds."
+    pushjet.push_msg(service_secret, descript)
+    gpio_zone.run_zone(zone, time_in_seconds);
+    pushjet.push_msg(service_secret, "Zone " + str(zone) + " complete.")
+
